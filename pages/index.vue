@@ -1,5 +1,6 @@
 <template>
-    <div text="red 3xl">
-        Welcome from Index
+    <div text="red 2rem center">
+        <p>From Index Page Habebee</p>
+        <hr class="w-sm">
     </div>
 </template>
