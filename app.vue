@@ -3,6 +3,7 @@
 
     <NuxtPage />
     <NameAndAge />
+    
     <div mt="3xl" text="gray center 2xl">
       <ChatsFirst />
       <ChatsSecond />
