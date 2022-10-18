@@ -1,5 +1,6 @@
 <template>
     <div text="red 2rem center">
-        hello from About
+        <p>Now In Intro Page</p>
+        <hr class="w-sm">
     </div>
 </template>
