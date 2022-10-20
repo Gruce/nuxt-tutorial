@@ -1,5 +1,4 @@
 <template>
-  <N
 
-    <NuxtPage />
 </template>
+
