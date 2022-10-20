@@ -1,4 +1,5 @@
 <template>
+
  <h1> Calculator</h1>
 
 <div class="main-div">
@@ -131,6 +132,5 @@ h1 {
 
 
 </style>
-
 
 
