@@ -1,49 +1,38 @@
 <template>
-<<<<<<< HEAD
-
- <h1> Calculator</h1>
-
-<div class="main-div">
-
-    <div class="screen">
-        <div>
-            <p></p>
+        <div class="main-div">
+            <div class="screen">
+                <div>
+                    <p></p>
+                </div>
+                <div class="clear">C</div>
+            </div>
+            <ul class="number-div">
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>*</li>
+    
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>-</li>
+    
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>+</li>
+    
+                <li>0</li>
+                <li>.</li>
+                <li>=</li>
+                <li>/</li>
+            </ul>
         </div>
-        <div class="clear">C</div>
-
-    </div>
-    <ul class="number-div">
-
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>*</li>
-
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>-</li>
-
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>+</li>
-
-        <li>0</li>
-        <li>.</li>
-        <li>=</li>
-        <li>/</li>
-
-    </ul>
-
-</div>
-
 </template>
-
 
 <style >
 body {
-    background-color:pink;
+    background-color: pink;
 }
 
 * {
@@ -107,7 +96,8 @@ h1 {
     border-top: 4px solid #ED586C;
 
 }
-.clear:hover{
+
+.clear:hover {
     background: rgba(143, 112, 133, 0.366);
     color: black;
 }
@@ -126,41 +116,9 @@ h1 {
     cursor: pointer;
 }
 
-.number-div li:hover,#equals:hover {
+.number-div li:hover,
+#equals:hover {
     background: #e317e6;
     color: white;
 }
-
-
 </style>
-
-
-=======
-    <div text="red 2rem center">
-        <input v-model="title" placeholder="Enter task title" /> <br />
-        <button @click="newTask()">Insert</button>
-        <hr />
-        <div flex="~ col gap-4" items="center" justify="center">
-            <Task v-for="(task, index) in tasks" :key="task.title" :task="task" :taskIndex="index"
-                @remove="removeTask($event)" />
-        </div>
-    </div>
-</template>
-<script setup>
-const tasks = ref([])
-
-// Addition
-const title = ref('')
-
-const newTask = () => {
-    tasks.value.push({
-        title: title.value
-    })
-    title.value = ''
-}
-
-const removeTask = (index) => {
-    tasks.value.splice(index, 1)
-}
-</script>
->>>>>>> origin/Zainab-Amjed
