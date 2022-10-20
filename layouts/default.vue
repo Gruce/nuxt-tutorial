@@ -1,6 +1,9 @@
+@ -1,11 +1,9 @@
 <template>
     <div>
-        <Header/>
-        <slot/>
+        <Header />
+        <div>
+            <slot />
+        </div>
     </div>
 </template>
