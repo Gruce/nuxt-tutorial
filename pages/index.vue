@@ -1,4 +1,3 @@
-@ -1,7 +1,32 @@
 <template>
     <div text="red 2rem center">
         <input v-model="title" placeholder="Enter task title" /> <br />

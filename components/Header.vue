@@ -6,7 +6,6 @@
       >
         <div class="flex items-center justify-between">
           <img src="public/img/icon-gray.svg" class="w-12">
-          
           <div @click="showMenu = !showMenu" class="flex md:hidden">
             <button
               type="button"
@@ -22,9 +21,21 @@
           </div>
         </div>
         <div>
-<NuxtLink to="/">Home</NuxtLink>
-<NuxtLink to="/intro">intro</NuxtLink>
-<NuxtLink to="/calculator">calculator</NuxtLink>
+          <ul :class="showMenu ? 'flex' : 'hidden'"
+            class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              <NuxtLink to="/">Home</NuxtLink>
+            </li>
+            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              <NuxtLink to="/intro">intro</NuxtLink>
+            </li>
+            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              <NuxtLink to="/calculator">calculator</NuxtLink>
+            </li>
+            <!-- <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              Contact Us
+            </li> -->
+          </ul>
         </div>
       </nav>
     </div>
