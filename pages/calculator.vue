@@ -31,23 +31,13 @@
 </template>
 
 <style >
-body {
-    background-color: pink;
-}
+
 
 * {
     box-sizing: border-box;
     font: bold 14px Arial, sans-serif;
 }
 
-h1 {
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 110px;
-    background: #673AB7;
-    color: white;
-    padding: 20px;
-}
 
 .main-div {
     width: 350px;
