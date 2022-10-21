@@ -79,9 +79,9 @@ export default {
             <NuxtLink to="/" class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
               Home
             </NuxtLink>
-            <NuxtLink to="/index2">
+            <NuxtLink to="/table">
               <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
-                index2
+                table
               </span>
             </NuxtLink>
             <NuxtLink to="/calculator">
@@ -127,7 +127,7 @@ export default {
               </svg>
               <span class="flex-1 ml-3 whitespace-nowrap  ">Home</span>
             </NuxtLink>
-            <NuxtLink to="/index2"
+            <NuxtLink to="/table"
               class="flex   items-center  p-2 text-base font-normal  rounded-lg  text-gray-200  hover:bg-gray-200 hover:text-gray-800 ">
               <svg aria-hidden="true" class=" flex-shrink-0 w-6 h-6    transition duration-75 " fill="currentColor"
                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +135,7 @@ export default {
                   d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
                 </path>
               </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap  ">index2</span>
+              <span class="flex-1 ml-3 whitespace-nowrap  ">table</span>
             </NuxtLink>
             <NuxtLink to="/calculator"
               class="flex   items-center  p-2 text-base font-normal  rounded-lg  text-gray-200  hover:bg-gray-200 hover:text-gray-800 ">

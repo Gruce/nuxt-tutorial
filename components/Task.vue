@@ -5,8 +5,8 @@
                     <span border-2 m-5  >{{task.title}}</span>
                     <span border-2 m-5>{{task.descrption}}</span>
                     <span border-2 m-5>{{task.url}}</span>
-                    <!-- الحذف 
-                <button ml-24 @click="$emit('remove',taskIndex)">delete</button>-->
+                    
+                <button ml-24 @click="$emit('remove',taskIndex)">delete</button>
                  </div>
 </template>
 
