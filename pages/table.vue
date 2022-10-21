@@ -6,7 +6,7 @@
                     leave-active-class=" transform  duration-300 ease-in" leave-from-class="opacity-100"
                     leave-to-class="opacity-0">
             <div v-if="open" border mb="8" px="3" py="7"  m="auto" bg="light" class="rounded-lg relative">    
-                <input m-5 p-2 v-model="title" placeholder="Enter Title itle" /> 
+                <input m-5 p-2 v-model="title" placeholder="Enter Title " /> 
                 <input m-5 p-2 v-model="descrption" placeholder="Enter Descrption" /> 
                 <input m-5 p-2 v-model="url" placeholder="Enter Url" /> 
                 <button p-2 @click="newTask()">Add</button>
