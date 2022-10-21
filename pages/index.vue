@@ -2,7 +2,7 @@
     <body p-10>
         <div text="blue 2rem center ">
             <div border-2 p-5>
-                <input m-5 p-2 v-model="title" placeholder="Enter Title itle" />
+                <input m-5 p-2 v-model="title" placeholder="Enter Title " />
                 <button p-2 @click="newTask()">Add</button>
                 <hr />
                 <div flex="~ col gap-4" items="center" justify="center">
