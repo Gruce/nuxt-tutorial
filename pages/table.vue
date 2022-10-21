@@ -1,7 +1,6 @@
-
 <template>
     <div flex="~ col gap-4 " justify="center" >
-        <button @click="open = !open" px="6" py="4" opacity-30 m="auto"  >{{open ? 'Hide' : 'Show'}} TABLE </button>
+        <button @click="open = !open" px="6" py="4" opacity-60 m="auto"  >{{open ? 'Hide' : 'Show'}} TABLE </button>
         <Transition enter-active-class="  transform  duration-700 ease-out"
                     enter-from-class=" opacity-0" enter-to-class=" opacity-100"
                     leave-active-class=" transform  duration-300 ease-in" leave-from-class="opacity-100"
@@ -63,7 +62,6 @@ const newTask = () => {
     url.value=''
 
 }
-
 const removeTask = (index) => {
     tasks.value.splice(index, 1)
 }
