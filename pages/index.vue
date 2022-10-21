@@ -8,8 +8,6 @@
         <input m-5 p-2 v-model="descrption" placeholder="Enter Descrption" /> 
         <input m-5 p-2 v-model="url" placeholder="Enter Url" /> 
 
-
-        
         <button p-2 @click="newTask()">Add</button>
         <hr />
         <div flex="~ col gap-4" items="center" justify="center">
