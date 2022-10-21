@@ -15,17 +15,6 @@
         <div flex="~ col gap-4" items="center" justify="center">
             <Task v-for="(task, index) in tasks" :key="task.title" :task="task" :taskIndex="index"
                 @remove="removeTask($event)" />
-                
-                <Task v-for="(task, index) in tasks2" :key="task.descrption" :task="task" :taskIndex="index"
-                @remove="removeTask($event)" /> 
-
-                <Task v-for="(task, index) in tasks3" :key="task.url" :task="task" :taskIndex="index"
-                @remove="removeTask($event)" />  
-
-                <!--
- Task للحذف اضيفه لل  
-@remove="removeTask($event)"
-                -->
         </div>
         </div>
     </div>
@@ -35,8 +24,6 @@
 <script setup>
 
 const tasks = ref([])
-const tasks2 = ref([])
-const tasks3 = ref([])
 
 // Addition
 const title = ref('') 
@@ -54,8 +41,8 @@ const newTask = () => {
     url.value=''
 
 }
-/*
+
 const removeTask = (index) => {
     tasks.value.splice(index, 1)
-}*/
+}
 </script>
