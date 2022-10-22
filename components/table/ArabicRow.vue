@@ -2,7 +2,7 @@
     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-right">
         <th py="4" px="6">
             <button @click="$emit('remove',taskIndex)">
-                <font-awesome-icon :icon="['fas', 'user-secret']" />
+                احذفني وخلصني من الدنيا
             </button>
         </th>
         <th py="4" px="6" >
