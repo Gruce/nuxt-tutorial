@@ -44,31 +44,27 @@
         </div>
         <nav class="hidden md:flex justify-between space-x-10 align-bottom">
           <div class="hidden md:flex space-x-10 align-bottom">
-            <NuxtLink
-              to="/"
-              class="text-base font-medium text-dark bold text-xl hover:text-gray-500"
-            >
+            <NuxtLink to="/" class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
               Home
             </NuxtLink>
             <NuxtLink to="/table">
-              <span
-                class="text-base font-medium text-dark bold text-xl hover:text-gray-500"
-              >
+              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
                 table
               </span>
             </NuxtLink>
             <NuxtLink to="/calculator">
-              <span
-                class="text-base font-medium text-dark bold text-xl hover:text-gray-500"
-              >
+              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
                 calculator
               </span>
             </NuxtLink>
             <NuxtLink to="/table_v2">
-              <span
-                class="text-base font-medium text-dark bold text-xl hover:text-gray-500"
-              >
+              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
                 Jawy's table
+              </span>
+            </NuxtLink>
+            <NuxtLink to="/skyTable">
+              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
+                Sky Table
               </span>
             </NuxtLink>
           </div>
