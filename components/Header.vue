@@ -64,6 +64,13 @@
                 calculator
               </span>
             </NuxtLink>
+            <NuxtLink to="/table_v2">
+              <span
+                class="text-base font-medium text-dark bold text-xl hover:text-gray-500"
+              >
+                Jawy's table
+              </span>
+            </NuxtLink>
           </div>
         </nav>
       </div>

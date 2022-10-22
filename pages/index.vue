@@ -21,6 +21,10 @@ const tasks = ref([])
 const title = ref('')
 
 const newTask = () => {
+    if (title.value === '') {
+        alert('Title is required')
+        return
+    }
     tasks.value.push({
         title: title.value,
     })
