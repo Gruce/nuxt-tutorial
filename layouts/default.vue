@@ -1,9 +1,10 @@
 <template>
-    <div>
-        <Header />
-        <div>
-            <slot />
+    <div class="">
+        <div flex="~ col gap-10" h="full">
+            <Header />
+            <div flex="grow">
+                <slot />
+            </div>
         </div>
-        <!-- <div text="center 2xl green">My footer</div> -->
     </div>
 </template>
