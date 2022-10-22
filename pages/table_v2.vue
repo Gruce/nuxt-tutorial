@@ -19,13 +19,13 @@
         <thead
           class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
         >
-          <tr class="text-center text-bold">
+          <tr class="text-center ">
             <th scope="col" py="3" px="6">التعديلات</th>
             <th scope="col" py="3" px="6">الرابط</th>
             <th scope="col" py="3" px="6">الوصف</th>
             <th scope="col" py="3" px="6">التوقيت</th>
             <th scope="col" py="3" px="6">العنوان</th>
-            <th scope="col" py="3" px="6">#</th>
+            <th >#</th>
           </tr>
         </thead>
         <tbody>

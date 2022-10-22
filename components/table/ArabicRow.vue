@@ -17,7 +17,7 @@
         <td py="4" px="6">
             {{task.title}}
         </td>
-        <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <td text="center">
             {{taskIndex+1}}
         </td>
     </tr>
