@@ -1,114 +1,33 @@
 <template>
-        <div class="main-div">
-            <div class="screen">
-                <div>
-                    <p></p>
-                </div>
-                <div class="clear">C</div>
-            </div>
-            <ul class="number-div">
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>*</li>
-    
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>-</li>
-    
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>+</li>
-    
-                <li>0</li>
-                <li>.</li>
-                <li>=</li>
-                <li>/</li>
-            </ul>
+    <div flex="~" justify="center">
+        <div grid="~ cols-4 rows-5 gap-2" rounded="xl" p="6" bg="purple">
+            <input p="x-6 y-4" col-span="3" border="0 rounded-lg" bg="white" />
+            <button p="x-6 y-4" border="0 rounded-lg" bg="white hover:gray-300" cursor="pointer">C</button>
+            <div v-for="button in buttons" :key="button" p="x-6 y-4" rounded="lg" bg="white">{{button.label}}</div>
         </div>
+    </div>
 </template>
 
-<style >
+<script setup>
+const buttons = [
+    { label: "7", function: () => { } },
+    { label: "8", function: () => { } },
+    { label: "9", function: () => { } },
+    { label: "*", function: () => { } },
 
+    { label: "4", function: () => { } },
+    { label: "5", function: () => { } },
+    { label: "6", function: () => { } },
+    { label: "-", function: () => { } },
 
-* {
-    box-sizing: border-box;
-    font: bold 14px Arial, sans-serif;
-}
+    { label: "1", function: () => { } },
+    { label: "2", function: () => { } },
+    { label: "3", function: () => { } },
+    { label: "+", function: () => { } },
 
-
-.main-div {
-    width: 350px;
-    margin: auto;
-    background: #720572;
-    height: 310px;
-    box-shadow: 2px 2px 2px gray;
-    padding: 15px;
-    border-bottom: 5px solid #ED586C;
-    border-top: 4px solid #ED586C;
-    border-radius: 10px;
-    position: relative;
-}
-
-
-
-.screen {
-    list-style: none;
-    color: white;
-    height: 45px;
-    width: 58px;
-    margin-left: 40px;
-    border-radius: 4px;
-    border-top: 4px solid #828A9B;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 8px;
-    width: 182px;
-    background: #828A9B;
-    border-top: 4px solid #ED586C;
-
-}
-
-.clear {
-    width: 50px;
-    background: #7B8D8E;
-    padding: 14px 17px;
-    position: absolute;
-    border-radius: 4px;
-    left: 250px;
-    top: 15px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    border-top: 4px solid #ED586C;
-
-}
-
-.clear:hover {
-    background: rgba(143, 112, 133, 0.366);
-    color: black;
-}
-
-.number-div li {
-    list-style: none;
-    float: left;
-    width: 52px;
-    background: white;
-    margin: 9px 5px 5px;
-    padding: 10px;
-    border-bottom: 4px solid #828A9B;
-    border-radius: 5px;
-    color: #888888;
-    text-align: center;
-    cursor: pointer;
-}
-
-.number-div li:hover,
-#equals:hover {
-    background: #e317e6;
-    color: white;
-}
-</style>
+    { label: "0", function: () => { } },
+    { label: ".", function: () => { } },
+    { label: "=", function: () => { } },
+    { label: "/", function: () => { } },
+]
+</script>
