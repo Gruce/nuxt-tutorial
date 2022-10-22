@@ -52,6 +52,10 @@ const descrption = ref('')
 const url = ref('')
 
 const newTask = () => {
+    if (title.value === '' || descrption.value === '' || url.value === '') {
+        alert('Please fill all fields')
+        return
+    }
     tasks.value.push({
         title: title.value,
         descrption:descrption.value,
