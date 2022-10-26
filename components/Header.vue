@@ -30,11 +30,6 @@
                 MZ-table
               </span>
             </NuxtLink>
-            <NuxtLink to="/calculator">
-              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
-                calculator
-              </span>
-            </NuxtLink>
             <NuxtLink to="/table_v2">
               <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
                 Jawy's table
@@ -43,6 +38,11 @@
             <NuxtLink to="/skyTable">
               <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
                 Sky Table
+              </span>
+            </NuxtLink>
+            <NuxtLink to="/calculator">
+              <span class="text-base font-medium text-dark bold text-xl hover:text-gray-500">
+                calculator
               </span>
             </NuxtLink>
           </div>

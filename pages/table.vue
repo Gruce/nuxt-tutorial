@@ -6,7 +6,7 @@
                     @remove="remove($event)" />
             </div>
             <div v-else flex="~" justify="center" items="center" text="2xl" h="48">
-                no data
+                no Task
             </div>
         </template>
         <template #tab-2>
