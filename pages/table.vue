@@ -1,115 +1,54 @@
 <template>
-    <div>
-    <TableTab :labels="pages">
-        <template #page-1>
-
-             <div flex="~ col gap-4 " justify="center" >
-        <button @click="open = !open" px="6" py="4" opacity-60 m="auto"  >{{open ? 'Hide' : 'Show'}} TABLE </button>
-        <Transition enter-active-class="  transform  duration-700 ease-out"
-                    enter-from-class=" opacity-0" enter-to-class=" opacity-100"
-                    leave-active-class=" transform  duration-300 ease-in" leave-from-class="opacity-100"
-                    leave-to-class="opacity-0">
-            <div v-if="open" border mb="8" px="3" py="7"  m="auto" bg="light" class="rounded-lg relative">    
-                <input m-5 p-2 v-model="title" placeholder="Enter Title " /> 
-                <input m-5 p-2 v-model="descrption" placeholder="Enter Descrption" /> 
-                <input m-5 p-2 v-model="url" placeholder="Enter Url" /> 
-                <button p-2 @click="newTask()">Add</button>
-                <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                    <table w="full" text="sm left " class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" py="3" px="6" >
-                                    num
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    Name
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    description
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    url
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    <span class="sr-only">op</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <TableRow v-for="(task, index) in tasks" :key="task.title" :task="task" :taskIndex="index"
-                @remove="removeTask($event)"/>
-                        </tbody>
-                    </table>
-                </div>
+    <Tabs :labels="tabs">
+        <template #tab-1>
+            <div v-if="nodata()" grid="~ cols-4 gap-4 ">
+                <TableCard v-for="(task, index) in tasks" :key="index" :task="task" :index="index"
+                    @remove="remove($event)" />
             </div>
-        </Transition>
-    </div>
+            <div v-else flex="~" justify="center" items="center" text="2xl" h="48">
+                no data
+            </div>
+        </template>
+        <template #tab-2>
+            <TableAdd :title="taskTitle" :description="taskDis" :url="taskUrl" @add="add" h="full" />
         </template>
 
-        <template #page-2>
-            <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                    <table w="full" text="sm left " class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" py="3" px="6" >
-                                    num
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    Name
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    description
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    url
-                                </th>
-                                <th scope="col" py="3" px="6">
-                                    <span class="sr-only">op</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <TableRow v-for="(task, index) in tasks" :key="task.title" :task="task" :taskIndex="index"
-                @remove="removeTask($event)"/>
-                        </tbody>
-                    </table>
-                </div>
-            
-        </template>
-        
-    </TableTab>
-    </div>
+    </Tabs>
 </template>
-
 <script setup>
-const pages = ['Page 1', 'Page 2']
-
-const open = ref(false)
-
+const tabs = ['Task', 'Add']
+const nodata = () => tasks.value.length > 0
+const taskCookie = useCookie('tasks')
 const tasks = ref([])
-
-// Addition
-const title = ref('') 
-const descrption = ref('')
-const url = ref('')
-
-const newTask = () => {
-    if (title.value === '' || descrption.value === '' || url.value === '') {
-        alert('Please fill all fields')
+const add = (taskTitle, taskDis, taskUrl) => {
+    const exists = tasks.value.find(task => task.title === taskTitle)
+    if (exists) {
+        alert('Task already exists')
         return
     }
-    tasks.value.push({
-        title: title.value,
-        descrption:descrption.value,
-        url:url.value
-    })
-    title.value = ''
-    descrption.value=''
-    url.value=''
-
-    
+    if (taskTitle === '') {
+        alert('Task title is required')
+        return
+    }
+    tasks.value.push(
+        {
+            title: taskTitle,
+            description: taskDis,
+            url: taskUrl,
+        }
+    )
 }
-const removeTask = (index) => {
+console.log(tasks)
+onMounted(() => {
+    const taskCookie = useCookie('tasks');
+    tasks.value = taskCookie.value || []
+})
+watch(() => tasks.value, (newData) => {
+    const taskCookie = useCookie('tasks');
+    taskCookie.value = newData
+}
+    , { deep: true })
+const remove = (index) => {
     tasks.value.splice(index, 1)
 }
 </script>
