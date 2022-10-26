@@ -1,5 +1,9 @@
 <template>
-    <div flex="~ col gap-4 " justify="center" >
+    <div>
+    <TableTab :labels="pages">
+        <template #page-1>
+
+             <div flex="~ col gap-4 " justify="center" >
         <button @click="open = !open" px="6" py="4" opacity-60 m="auto"  >{{open ? 'Hide' : 'Show'}} TABLE </button>
         <Transition enter-active-class="  transform  duration-700 ease-out"
                     enter-from-class=" opacity-0" enter-to-class=" opacity-100"
@@ -40,8 +44,46 @@
             </div>
         </Transition>
     </div>
+        </template>
+        
+        <template #page-2>
+            <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+                    <table w="full" text="sm left " class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" py="3" px="6" >
+                                    num
+                                </th>
+                                <th scope="col" py="3" px="6">
+                                    Name
+                                </th>
+                                <th scope="col" py="3" px="6">
+                                    description
+                                </th>
+                                <th scope="col" py="3" px="6">
+                                    url
+                                </th>
+                                <th scope="col" py="3" px="6">
+                                    <span class="sr-only">op</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <TableRow v-for="(task, index) in tasks" :key="task.title" :task="task" :taskIndex="index"
+                @remove="removeTask($event)"/>
+                        </tbody>
+                    </table>
+                </div>
+            
+        </template>
+        
+    </TableTab>
+    </div>
 </template>
+
 <script setup>
+const pages = ['Page 1', 'Page 2']
+
 const open = ref(false)
 
 const tasks = ref([])
