@@ -45,7 +45,7 @@
         </Transition>
     </div>
         </template>
-        
+
         <template #page-2>
             <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                     <table w="full" text="sm left " class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -107,6 +107,7 @@ const newTask = () => {
     descrption.value=''
     url.value=''
 
+    
 }
 const removeTask = (index) => {
     tasks.value.splice(index, 1)
