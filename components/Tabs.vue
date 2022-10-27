@@ -4,7 +4,7 @@
         <div flex="~">
             <div v-for="(label, index) in labels" :key="label" @click="selectedTab = index" :class="[
                 selectedTab == index
-                    ? 'bg-tab text-tab'
+                    ? 'bg-tab text-dark'
                     : 'text-gray-500 bg-gray-100 hover:text-gray-100 hover:bg-red-800 cursor-pointer',
             ]" p="x-8 y-3" border=" rounded-t-lg " m="r-1" >
                 {{ label }}
@@ -22,7 +22,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script setup>
@@ -31,6 +30,6 @@ const selectedTab = ref(0)
 </script>
 <style scoped>
 .bg-tab {
-    background-color: #9c9c9cc7;
+    background-color: #afafafb4;
 }
 </style>

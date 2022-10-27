@@ -12,7 +12,6 @@
         <template #tab-2>
             <TableAdd :title="taskTitle" :description="taskDis" :url="taskUrl" @add="add" h="full" />
         </template>
-
     </Tabs>
 </template>
 <script setup>
@@ -21,13 +20,13 @@ const nodata = () => tasks.value.length > 0
 const taskCookie = useCookie('tasks')
 const tasks = ref([])
 const add = (taskTitle, taskDis, taskUrl) => {
+    if (taskTitle === '') {
+        alert('Task title is required')
+        return
+    }
     const exists = tasks.value.find(task => task.title === taskTitle)
     if (exists) {
         alert('Task already exists')
-        return
-    }
-    if (taskTitle === '') {
-        alert('Task title is required')
         return
     }
     tasks.value.push(
