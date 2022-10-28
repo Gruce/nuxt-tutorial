@@ -3,7 +3,7 @@
         class="relative rounded-3xl shadow-xl hover:shadow-sm hover:shadow-zinc-500">
         <div m="t-2">
             <div flex="~" justify="between" items="center" >
-                <p :class="open ? 'hidden' : 'visible'" text="2xl red-700"  m="y-2" class="font-semibold">{{ task.title.substring(0, 130) 
+                <p :class="open ? 'hidden' : 'visible'" text="2xl red-700"  m="y-2" class="font-semibold">{{ task.title.substring(0, 13) 
                 }}</p>
                 <svg @click="open = !open" :class="open ? 'hidden' : 'visible'" class="text-gray-600 hover:text-red-600"
                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
