@@ -19,6 +19,7 @@ const tabs = ['Task', 'Add']
 const nodata = () => tasks.value.length > 0
 const taskCookie = useCookie('tasks')
 const tasks = ref([])
+
 const add = (taskTitle, taskDis, taskUrl) => {
     if (taskTitle === '') {
         alert('Task title is required')
@@ -37,7 +38,6 @@ const add = (taskTitle, taskDis, taskUrl) => {
         }
     )
 }
-console.log(tasks)
 onMounted(() => {
     const taskCookie = useCookie('tasks');
     tasks.value = taskCookie.value || []

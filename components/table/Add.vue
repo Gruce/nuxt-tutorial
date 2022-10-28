@@ -7,12 +7,12 @@
                     <div>
                         <label text="sm gray-700 block font-medium">Name</label>
                         <input type="text" v-model="taskTitle" bg="light" border="0 gray-200 rounded" p="x-3 y-2"
-                            text="blok gray-700" w="95" class="block" placeholder="Enter task name" />
+                            text="gray-700"  w="95" class="block" placeholder="Enter task name" />
                     </div>
                     <div>
                         <label text="sm gray-700 block font-medium" m="b-1">Url</label>
                         <input type="text" v-model="taskUrl" bg="light" border="0 gray-200 rounded" p="x-3 y-2"
-                            text="blok gray-700" w="95" class="block" placeholder="https://www.google.es/" />
+                            text="gray-700" w="95" class="block" placeholder="https://www.google.es/" />
                     </div>
                     <div>
                         <label text="sm gray-700 block font-medium" m="b-1">Description</label>

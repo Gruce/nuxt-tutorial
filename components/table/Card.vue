@@ -27,7 +27,7 @@
             <div border="t-2" class="opacity-20"></div>
             <div flex="~" justify="between" items="center">
                 <div class=" hover:text-blue-700">
-                    <a :href="`${task.url}`" class="text-dark">
+                    <a :href="`${task.url}`" class="text-dark" >
                         <p>Link</p>
                     </a>
                 </div>
