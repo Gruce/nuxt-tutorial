@@ -20,8 +20,8 @@
                     border="1 rounded-md  gray-300" p="x-4 y-3" m="b-4" />
             </div>
             <div flex="~" text="gray-400 sm">
-                <p :class="open ? 'hidden' : 'visible'">{{ task.description.substring(0, 30)  }}</p>
-                <input v-if="open" v-model.lazy="task.description" type="text" placeholder="description"
+                <p  overflow-x="scroll" :class="open ? 'hidden' : 'visible'">{{ task.description.substring(0, 300)}}</p>
+                <input v-if="open" v-model.lazy="task.description" type="text" placeholder="description" 
                     border="1 rounded-md  gray-300" p="x-4 y-3" m="b-4" />
             </div>
             <div border="t-2" class="opacity-20"></div>
