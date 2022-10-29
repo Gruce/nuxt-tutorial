@@ -1,53 +1,60 @@
 <template>
     <Tabs :labels="tabs">
         <template #tab-1>
-            <div v-if="nodata()" grid="~ cols-4 gap-4 ">
-                <TableCard v-for="(task, index) in tasks" :key="index" :task="task" :index="index"
-                    @remove="remove($event)" />
+            <div v-if="tasks.length > 0" grid="~ cols-4 gap-4 ">
+                <TableCard v-for="(task, index) in tasks" :key="index" :task="task" :index="index" @remove="remove($event)" />
             </div>
             <div v-else flex="~" justify="center" items="center" text="2xl" h="48">
-                no Task
+                No Task
             </div>
         </template>
         <template #tab-2>
-            <TableAdd :title="taskTitle" :description="taskDis" :url="taskUrl" @add="add" h="full" />
+            <TableAdd :task="task" :addFunction="add" h="full" />
         </template>
     </Tabs>
 </template>
 <script setup>
+import { sleep } from '@antfu/utils';
+
 const tabs = ['Task', 'Add']
-const nodata = () => tasks.value.length > 0
 const taskCookie = useCookie('tasks')
 const tasks = ref([])
+tasks.value = taskCookie.value || []
 
-const add = (taskTitle, taskDis, taskUrl) => {
-    if (taskTitle === '') {
+// TASK Object
+const task = ref({
+    title: '',
+    description: '',
+    url: ''
+})
+
+
+const add = () => {
+    if (task.value.title === '') {
         alert('Task title is required')
         return
     }
-    const exists = tasks.value.find(task => task.title === taskTitle)
+    const exists = tasks.value.find(t => t.title === task.value.title)
     if (exists) {
         alert('Task already exists')
         return
     }
-    tasks.value.push(
-        {
-            title: taskTitle,
-            description: taskDis,
-            url: taskUrl,
-        }
-    )
+    tasks.value.push(task.value)
+    taskCookie.value = tasks.value
+    resetTask()
+    alert("Task added")
 }
-onMounted(() => {
-    const taskCookie = useCookie('tasks');
-    tasks.value = taskCookie.value || []
-})
-watch(() => tasks.value, (newData) => {
-    const taskCookie = useCookie('tasks');
-    taskCookie.value = newData
-}
-    , { deep: true })
+
 const remove = (index) => {
     tasks.value.splice(index, 1)
+    taskCookie.value = tasks.value
+}
+
+const resetTask = () => {
+    task.value = {
+        title: '',
+        description: '',
+        url: ''
+    }
 }
 </script>
