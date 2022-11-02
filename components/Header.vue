@@ -23,6 +23,7 @@ const navs = ref([
   { name: 'Home', path: '/' },
   { name: 'Table', path: '/table' },
   { name: 'Sky Table', path: '/skyTable' },
+  { name: 'Jawy Table', path: '/table_v2'}
 ])
 
 // const nav = useSaveState('navs', null)
