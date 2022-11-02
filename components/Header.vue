@@ -25,6 +25,6 @@ const navs = ref([
   { name: 'Sky Table', path: '/skyTable' },
 ])
 
-
+// const nav = useSaveState('navs', null)
 const name = useSaveState('name', null)
 </script>
