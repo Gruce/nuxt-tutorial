@@ -33,7 +33,7 @@
                 </div>
                 <div text="gray-400">
                     <div flex="~" justify="center" items="center" class="hover:text-red-600 "
-                        @click="$emit('remove', index)">
+                        @click="deleteFunction()">
                         <svg width="22" height="22" viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M7 21q-.825 0-1.412-.587Q5 19.825 5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413Q17.825 21 17 21Zm2-4h2V8H9Zm4 0h2V8h-2Z" />
@@ -46,7 +46,7 @@
 </template>
 <script setup>
 const open = ref(false)
-const props = defineProps(['task', 'index'])
+const props = defineProps(['task', 'deleteFunction'])
 </script>
 <style scoped>
 .text-red {

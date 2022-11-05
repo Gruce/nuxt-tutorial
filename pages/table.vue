@@ -2,7 +2,8 @@
     <Tabs :labels="tabs">
         <template #tab-1>
             <div v-if="tasks.length > 0" grid="~ cols-4 gap-4 ">
-                <TableCard v-for="(task, index) in tasks" :key="index" :task="task" :index="index" @remove="remove($event)" />
+                <TableCard v-for="(task, index) in tasks" :key="index" :task="task" 
+                :deleteFunction="remove"/>
             </div>
             <div v-else flex="~" justify="center" items="center" text="2xl" h="48">
                 No Task
@@ -48,6 +49,8 @@ const add = () => {
 const remove = (index) => {
     tasks.value.splice(index, 1)
     taskCookie.value = tasks.value
+    resetTask()
+    alert("Task Delete")
 }
 
 const resetTask = () => {
